@@ -2,11 +2,11 @@
 ## a part of GeoHackWeek2016
 
 ## Introduction 
-Extreme heat is one of the deadliest climate hazards even though heat-related deaths are easily preventable. Disaster management and relief agencies need highly localized temperature information to target interventions, but often, the area of highest concerns lack local weather stations. 
+Extreme heat is one of the deadliest climate hazards, even though heat-related deaths are easily preventable. Disaster management and relief agencies need highly localized temperature information to target interventions, but often, the most vulnerable areas lack local weather stations. 
 
 Land-surface temperature can be remotely sensed at sub-kilometer scale, but isn't suitable for making health decisions. We aim to make use of this and other satellite data to estimate 2-meter air temperature on a sub-kilometer scale: 
 
-$$ f \left( T_{land}, \epsilon, NDVI, p, h \right) = T_{air}
+$$ f \left( T_{land}, \epsilon, NDVI, p, h \right) = T_{air} $$
 
 ## Workflow
 To do this analysis, we combine satellite data extracted at locations with air temperature observations into a Pandas data frame. Using Google Earth Engine's Python API, we read in satellite data for elevation $h$, emissivity $\epsilon$,land cover percent impervious $p$, and raw Landsat8 data. We use this latter data to calculate land surface temperature $T_{land}$, vegetation fraction $NDVI$. Time-series of these data is sampled at weather station locations, and appended to a Pandas dataframe. These functions and sample code are documented here. Some additional javascript functions for Google Earth Engine are found here.  
@@ -30,5 +30,7 @@ Last, to make this data accessible to end users, we provide a function that comp
 ## Questions? 
 Get in touch: 
 regression analysis: Raj/Matt
+
 data: Anna/Logan
+
 spatial calculations/visualization: Manindar
